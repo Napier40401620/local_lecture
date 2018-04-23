@@ -6,5 +6,17 @@ def users():
 	names=['simon', 'thomas', 'lee', 'jamie', 'sylvester']
 	return render_template('loops.html', names=names)
 
-if __name__=="__main__":
-	app.run(host='0.0.0.0', port=5002, debug=True)
+@app.route('/inherits/')
+def inherits():
+	return render_template('base.html') 
+
+@app.route('/inherits/one/')
+def inherits_one():
+	return render_template('in1.html') 
+
+@app.route('/inherits/two/')
+def inherits_two():
+	return render_template('in2.html')
+
+if __name__ == ("__main__"):
+	app.run(host='0.0.0.0', port=5003, debug=True)
