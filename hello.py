@@ -10,5 +10,11 @@ def hello(name=None):
 	user={'name':name}
 	return render_template('hello.html',user=user)
 
+@app.route('/bootstrap')
+def boot():
+	return render_template('bootstrap.html'), 200
+
+
+
 if __name__ == "__main__":
 	app.run(debug=True)
